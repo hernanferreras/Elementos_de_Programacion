@@ -1,1 +1,22 @@
+/*Ejercicio 2.8
+    Se ingresa un número entero que representa una fecha con formato (ddmmaa).
+    Se pide transformarlo a un número con formato (aammdd).
+*/
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+
+    int ddmmaa, aa, mm, dd;
+    printf("Ingrese un numero de 3 cifras: ");
+    scanf("%d", &ddmmaa);
+    aa = ddmmaa%100;
+    //printf("aa: %02d\n", aa);
+    mm = (ddmmaa%10000)/100;
+    //printf("mm: %02d\n", mm);
+    dd = (ddmmaa%1000000)/10000;
+    //printf("dd: %02d\n", dd);
+    printf("El numero transformado es %02d%02d%02d", aa, mm, dd);
+    return 0;
