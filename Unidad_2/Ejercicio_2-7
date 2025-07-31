@@ -1,0 +1,19 @@
+/*Ejercicio 2.7
+    Se ingresa un número entero de 3 cifras. Descomponerlo en unidad, decena y centena.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+    int num, unidad, decena, centena;
+    printf("Ingrese un numero de 3 cifras: ");
+    scanf("%d", &num);
+    unidad = (num%10);
+    decena = (num%100)/10;
+    centena = (num%1000)/100;
+    printf("Unidad: %d\n", unidad);
+    printf("Decena: %d\n", decena);
+    printf("Centena: %d\n", centena);
+    return 0;
