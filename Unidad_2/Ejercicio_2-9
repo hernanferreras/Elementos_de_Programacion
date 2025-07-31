@@ -1,0 +1,23 @@
+/*Ejercicio 2.9
+    Confeccionar un programa que ingrese un valor expresado en Kibibyte (KiB) y
+    lo informe expresado en: TiB, GiB, MiB, con leyendas aclaratorias.
+    (1MiB = 1024 KiB; 1GiB = 1024 MiB; 1TiB = 1024 GiB)
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() 
+{
+    unsigned long kb, valor = 1024;
+    double MiB, GiB, TiB;
+    printf("Ingrese el valor expresado en Kibibyte (KiB): ");
+    scanf("%ld", &kb);
+    MiB = kb/valor;
+    GiB = MiB*1/valor; //kb/(valor*valor);
+    TiB = GiB*1/valor; //(valor*valor*valor);
+    printf("%ld KiB es equivalente a %f MiB\n", kb, (double)MiB);
+    printf("%ld KiB es equivalente a %f GiB\n", kb, (double)GiB);
+    printf("%ld KiB es equivalente a %f TiB\n", kb, (double)TiB);
+    return 0
+}
