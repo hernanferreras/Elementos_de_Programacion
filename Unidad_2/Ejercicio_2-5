@@ -1,0 +1,21 @@
+/* Ejercicio 2.5
+    Conociendo la cantidad de tarros de pintura que existe en un depósito de una pinturería y sabiendo
+    que el 50% son tarros de 1Lt, el 30% tarros de 4Lts. y el resto tarros de 20Lts, determinar la cantidad de tarros
+    de 1Lt., 4Lts. Y 20 Lts.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+    int tarros, lt1, lt4, lt20;
+    printf("Ingrese la cantidad de tarros de pintura existentes: ");
+    scanf("%d", &tarros);
+    lt1 = (int)(tarros*0.5);
+    lt4 = (int)(tarros*0.3);
+    lt20 = tarros - lt1 - lt4;
+    printf("La cantidad de tarros de 1 Litro es de: %d\n", lt1);
+    printf("La cantidad de tarros de 4 Litros es de: %d\n", lt4);
+    printf("La cantidad de tarros de 20 Litros es de: %d\n  ", lt20);
+return 0;
