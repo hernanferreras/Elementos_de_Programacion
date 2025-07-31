@@ -9,6 +9,7 @@
 #include <time.h>
 
 int main()
+{
     int tarros, lt1, lt4, lt20;
     printf("Ingrese la cantidad de tarros de pintura existentes: ");
     scanf("%d", &tarros);
@@ -18,4 +19,5 @@ int main()
     printf("La cantidad de tarros de 1 Litro es de: %d\n", lt1);
     printf("La cantidad de tarros de 4 Litros es de: %d\n", lt4);
     printf("La cantidad de tarros de 20 Litros es de: %d\n  ", lt20);
-return 0;
+    return 0;
+}
