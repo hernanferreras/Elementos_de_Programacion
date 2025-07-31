@@ -1,0 +1,29 @@
+ /*Ejercicio 4.3
+    Confeccionar un programa que pueda determinar de 3 números enteros
+    que se ingresan si alguno de ellos es igual a la suma de los otros dos.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num1, num2, num3;
+    printf("Ingrese el primer numero: ");
+    scanf("%d", &num1);
+    printf("Ingrese el segundo numero: ");
+    scanf("%d", &num2);
+    printf("Ingrese el tercer numero: ");
+    scanf("%d", &num3);
+    if(num1 == num2+num3){
+        printf("El nro %d es igual a %d + %d", num1, num2, num3);
+    } if(num2 == num1+num3){
+            printf("El nro %d es igual a %d + %d", num2, num1, num3);
+        } if(num3 == num1+num2){
+                printf("El nro %d es igual a %d + %d", num3, num1, num2);
+        }
+    else {
+        printf("Ninguno de los numeros ingresados es igual a la suma de los otros dos");
+    }
+    return 0;
+}
