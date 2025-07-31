@@ -1,0 +1,18 @@
+/* Ejercicio 2.6
+    El precio para un vuelo es de $8800 en clase turista y se aplica un incremento del 30% en primera clase.
+    Se ingresan la cantidad de pasajes vendidos de clase turista y de primera clase. Obtener la recaudación total del vuelo.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+    int turista, pClase;
+    printf("Ingrese la cantidad de pasajes vendidos en Clase Turista: ");
+    scanf("%d", &turista);
+    printf("\nIngrese la cantidad de pasajes vendidos en Primera Clase: ");
+    scanf("%d", &pClase);
+    printf("\nLa recaudacion total del viaje es de: $%.2f", (turista*8800)+(pClase*8800*1.3));
+    return 0;
+  
