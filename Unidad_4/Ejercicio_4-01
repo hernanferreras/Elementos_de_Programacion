@@ -1,0 +1,28 @@
+/*Ejercicio 4.1
+    Se ingresan 3 números distintos. Determinar el mayor.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num1, num2, num3, mayor;
+    printf("Ingrese el primer numero: ");
+    scanf("%d", &num1);
+    printf("Ingrese el segundo numero: ");
+    scanf("%d", &num2);
+    printf("Ingrese el tercer numero: ");
+    scanf("%d", &num3);
+    if(num1 > num2 && num1 > num3){
+        mayor = num1;
+    } else {
+            if(num2 > num3){
+                            mayor = num2;
+            } else{
+                    mayor = num3;
+            }
+    }
+    printf("El numero mayor es el %d", mayor);
+    return 0;
+}
