@@ -1,0 +1,62 @@
+ /*Ejercicio 4.16
+    Un negocio vende distintos artículos identificados por un código, según se muestra:
+    •  código 1; 10; 100: 10 pesos la unidad.
+    •  código 2; 22; 222: 7 pesos la unidad. La caja de 10 unidades vale 65 pesos.
+    •  código 3; 33: 3 pesos la unidad. Si la compra es por más de 10 unidades se hace un descuento del 10%
+        sobre el total de la compra.
+    •  código 4; 44: 1 peso la unidad.
+    Confeccionar un programa que ingrese como dato el código de un artículo
+    y la cantidad a comprar y se informe el importe de la compra, con las siguientes leyendas:
+    ARTÍCULO xxxxx CANTIDAD xxxx IMPORTE A PAGAR $ xxxx.xx
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int articulo, cantidad, cantCajas, aux, flag1 = 1;
+    float importeAPagar;
+    printf("Ingrese el codigo del articulo: ");
+    scanf("%d", &articulo);
+    printf("Ingrese la cantidad a comprar: ");
+    scanf("%d", &cantidad);
+    switch(articulo){
+        case(1):
+        case(10):
+        case(100):
+            importeAPagar = cantidad*10;
+            break;
+        case(2):
+        case(22):
+        case(222):
+            if(cantidad >= 10){
+                cantCajas = (int)cantidad/10;
+                aux = cantidad - cantCajas*10;
+                importeAPagar = cantCajas*65 + aux*7;
+            } else {
+                importeAPagar = cantidad*7;
+            }
+            break;
+        case(3):
+        case(33):
+            importeAPagar = cantidad*3;
+            if(cantidad > 10){
+                importeAPagar = importeAPagar - importeAPagar*0.1;
+            }
+            break;
+        case(4):
+        case(44):
+            importeAPagar = cantidad*1;
+            break;
+        default:
+            flag1 = 0;
+    }
+    if(flag1 != 0){
+        printf("ARTICULO\tCANTIDAD\tIMPORTE A PAGAR\n");
+        printf("%d\t\t%d\t\t$%.2f", articulo, cantidad, importeAPagar);
+    }else{
+        printf("El codigo ingresado no corresponde a ningun producto");
+    }
+  return 0;
+}
