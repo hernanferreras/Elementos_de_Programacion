@@ -1,0 +1,38 @@
+/*Ejercicio 4.9
+    Confeccionar un programa que permita ingresar un carácter alfanumérico y determine e informe
+    si lo ingresado corresponde a una vocal, con el mensaje “VOCAL”. y su correspondiente valor numérico en ASCII.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char letra;
+    printf("Ingrese una letra: ");
+    scanf("%c", &letra);
+    if ((letra > 64&&letra < 91)||(letra >96&&letra < 123)){
+        switch(letra){
+            case('A'):
+            case('E'):
+            case('I'):
+            case('O'):
+            case('U'):
+            case('a'):
+            case('e'):
+            case('i'):
+            case('o'):
+            case('u'):
+                printf("La letra %c ingresada ES VOCAL y su numero en el codigo ASCII es el %d", letra, letra);
+                break;
+            default:
+                printf("La letra %c NO ES VOCAL, su numero en el codigo ASCII es el %d", letra, letra);
+                break;
+        }
+    } else {
+        printf("El caracter ingresado no es una letra");
+    }
+    return 0;
+}
+
+    */
