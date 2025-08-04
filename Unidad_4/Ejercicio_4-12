@@ -1,0 +1,30 @@
+ /*Ejercicio 4.12
+    Ingresar el valor de la hora y la cantidad de horas trabajadas por un empleado.
+    Calcular su sueldo tomando en cuenta que recibe un premio de $500 si trabajo más de 50 horas y,
+    además, si trabajó más de 150 horas se le otorgan $1000 adicionales.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float valorHora;
+    int horasTrabajadas;
+    printf("Ingrese el valor de la hora: ");
+    scanf("%f", &valorHora);
+    printf("Ingrese la cantidad de horas trabajadas: ");
+    scanf("%d", &horasTrabajadas);
+    if(horasTrabajadas <= 50){
+        printf("El sueldo total es de: %.2f", horasTrabajadas*valorHora);
+    } else {
+            if (horasTrabajadas > 50 && horasTrabajadas <=150){
+            printf("El sueldo total es de: %.2f", (horasTrabajadas*valorHora)+500);
+            } else {
+                    if(horasTrabajadas > 150){
+                        printf("El sueldo total es de: %.2f", (horasTrabajadas*valorHora)+500+1000);
+                    }
+            }
+    }
+  return 0;
+}
