@@ -1,0 +1,38 @@
+/*Ejercicio 4.15
+    Un negocio de artículos de computación vende DVDs según la siguiente escala de precios:
+    •  sueltos, entre 1 y 9 a $15 c/u.
+    •  la caja de 10 cuesta $120.
+    •  la caja de 50 cuesta $500.
+    Si la compra excede las 100 unidades se efectúa un descuento del 10%.
+    NOTA: se aceptan compras entre 1 y 500 DVDs.
+    Se pide que se ingrese una cantidad de DVDs que se quiere comprar y calcule e informe el importe a pagar.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int ventaDVD, caja50, caja10, caja1, cajasTotales, totalVenta;
+    printf("Ingrese la cantidad de DVDs a vender: ");
+    scanf("%d", &ventaDVD);
+    if(ventaDVD < 1 || ventaDVD > 500){
+        printf("No se puede realizar la venta de DVDs, la cantidad debe ser entre 1 y 500 un. \n");
+    } else {
+        cajasTotales = ventaDVD;
+        caja50 = (int)(cajasTotales/50);
+        cajasTotales = cajasTotales - caja50*50;
+        caja10 = (int)(cajasTotales/10);
+        caja1 = cajasTotales - caja10*10;
+        totalVenta = caja50*500+caja10*120+caja1*15;
+        if(ventaDVD > 100){
+            totalVenta = totalVenta - (totalVenta*0.10);
+        }
+        printf("\t\tCANTIDAD DE CAJAS\tIMPORTE\n");
+        printf("Cajas de 50: \t%d\t\t\t%d\n", caja50, caja50*500);
+        printf("Cajas de 10: \t%d\t\t\t%d\n", caja10, caja10*120);
+        printf("Unidades: \t%d\t\t\t%d\n", caja1, caja1*15);
+        printf("IMPORTE TOTAL: $%.2f", (float)totalVenta);
+    }
+  return 0;
+}
