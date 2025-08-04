@@ -1,0 +1,37 @@
+/*Ejercicio 4.10
+    Confeccionar un programa que permita convertir grados sexagesimales a radianes y viceversa,
+    según el valor de un código que se ingresa junto al valor.
+    Si código = 1 se ingresan grados, si es 2 se ingresan radianes.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    1 radian = (180 grados/ pi)
+    1 grado = (pi /180 radianes)
+
+
+    int codigo, valor;
+    const float pi = 3.141592;
+    printf("Ingrese el codigo correspondiente para realizar la conversion:\n");
+    printf("1 - Ingresa el valor en grados\n");
+    printf("2 - Ingresa el valor en radianes\n");
+    scanf("%d", &codigo);
+    switch(codigo){
+        case(1):
+            printf("Ingrese el valor en grados: ");
+            scanf("%d", &valor);
+            printf("%d grados es equivalente a %.5f radianes", valor, (float)((pi*valor)/180));
+            break;
+        case(2):
+            printf("Ingrese el valor en radianes: ");
+            scanf("%d", &valor);
+            printf("%d radian es equivalente a %.5f grados", valor, (float)((180*valor)/pi));
+            break;
+        default:
+            printf("El codigo ingresado no corresponde a una operacion valida");
+    }
+    return 0;
+}
