@@ -1,0 +1,44 @@
+/*Ejercicio 4.11
+    Escribir un programa que solicite el año y el número de mes y nos informe cuantos días tiene dicho mes.
+    Debemos considerar que el año puede ser bisiesto.
+    Un año es bisiesto cuando es divisible por 4 y no por 100 o el año es divisible por 400.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int anio, mes;
+    printf("Ingrese el año: ");
+    scanf("%d", &anio);
+    printf("Ingrese el numero de mes: ");
+    scanf("%d", &mes);
+    switch(mes){
+        case(1):
+        case(3):
+        case(5):
+        case(7):
+        case(8):
+        case(10):
+        case(12):
+            printf("El numero de mes %d tienen 31 dias", mes);
+            break;
+        case(4):
+        case(6):
+        case(9):
+        case(11):
+            printf("El numero de mes %d tiene 30 dias", mes);
+            break;
+        case(2):
+            if(((anio%4 == 0) && (anio%100 != 0))||(anio%400 == 0)){
+                printf("El numero de mes %d tienen 29 dias", mes);
+            } else {
+                printf("El numero de mes %d tiene 28 dias", mes);
+            }
+            break;
+        default:
+            printf("El numero de mes ingresado no corresponde al calendario");
+    }
+   return 0;
+}
