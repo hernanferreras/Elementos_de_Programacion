@@ -1,0 +1,110 @@
+/*
+  Ejercicio 4.18
+    Confeccionar un programa que permita ingresar la fecha actual (día, mes y año) y la fecha de nacimiento
+    de una persona (día, mes y año).
+    Con ambos datos debe calcular la edad de dicha persona.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int anoNac, mesNac, diaNac, anoActual, mesActual, diaActual, edad, flag1 = 1;
+    printf("Ingrese el dia actual: ");
+    scanf("%d", &diaActual);
+    printf("Ingrese el mes actual: ");
+    scanf("%d", &mesActual);
+    printf("Ingrese el año actual: ");
+    scanf("%d", &anoActual);
+    printf("Ingrese el dia de nacimiento: ");
+    scanf("%d", &diaNac);
+    printf("Ingrese el mes de nacimiento: ");
+    scanf("%d", &mesNac);
+    printf("Ingrese el año de nacimiento: ");
+    scanf("%d", &anoNac);
+    switch(mesActual){
+        case(1):
+        case(3):
+        case(5):
+        case(7):
+        case(8):
+        case(10):
+        case(12):
+            if(diaActual < 1 || diaActual > 31){
+                flag1 = 0;
+            }
+            break;
+        case(4):
+        case(6):
+        case(9):
+        case(11):
+            if(diaActual < 1 || diaActual > 30){
+                flag1 = 0;
+            }
+            break;
+        case(2):
+            if(anoActual%4 == 0 || (anoActual%100 != 0 && anoActual%400 == 0)){
+                if(diaActual < 1 || diaActual > 29){
+                    flag1 = 0;
+                }
+            } else {
+                    if (diaActual < 1 || diaActual > 28){
+                    flag1 = 0;
+                    }
+            break;
+        default:
+            flag1 = 0;
+        }
+    }
+    switch(mesNac){
+        case(1):
+        case(3):
+        case(5):
+        case(7):
+        case(8):
+        case(10):
+        case(12):
+            if(diaNac < 1 || diaNac > 31){
+                flag1 = 0;
+            }
+            break;
+        case(4):
+        case(6):
+        case(9):
+        case(11):
+            if(diaNac < 1 || diaNac > 30){
+                flag1 = 0;
+            }
+            break;
+        case(2):
+            if(anoNac%4 == 0 || (anoNac%100 != 0 && anoNac%400 == 0)){
+                if(diaNac < 1 || diaNac > 29){
+                    flag1 = 0;
+                }
+            } else {
+                    if (diaNac < 1 || diaNac > 28){
+                        flag1 = 0;
+                    }
+            break;
+        default:
+            flag1 = 0;
+        }
+    }
+    if(anoActual < anoNac){
+        flag1 = 0;
+    }
+    if(flag1 == 1){
+        edad = anoActual - anoNac - 1;
+        if((mesActual >= mesNac) && (diaActual >= diaNac)){
+                edad = anoActual - anoNac;
+        }
+    }
+    if(flag1 == 0){
+        printf("Los datos ingresados no son correctos.");
+    } else {
+        printf("La edad de la persona es de: %d años", edad);
+    }
+    return 0;
+
+}
