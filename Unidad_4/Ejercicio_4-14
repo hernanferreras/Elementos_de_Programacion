@@ -1,0 +1,33 @@
+/*
+    Ejercicio 4.14
+    La farmacia Sindical efectúa descuentos a sus afiliados según el importe de la compra con la siguiente escala:
+    a. menor de $55 el descuento es del 4.5%.
+    b. entre $55 y $100 el descuento es del 8%.
+    c. más de $100 el descuento es del 10.5%.
+    Confeccionar un programa que reciba un importe e informe: el descuento y el precio neto a cobrar, con mensajes aclaratorios.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float neto, importeCompra, descuento;
+    printf("Ingrese el importe de la compra: ");
+    scanf("%f", &importeCompra);
+    if(importeCompra<55){
+        descuento = importeCompra*0.045;
+    } else {
+        if((importeCompra>= 55) && (importeCompra<=100)){
+            descuento = importeCompra*0.08;
+        } else {
+            if(importeCompra>100){
+                descuento = importeCompra*0.104;
+            }
+        }
+    }
+    neto = importeCompra - descuento;
+    printf("IMPORTE\t\tDESCUENTO\tNETO A ABONAR\n");
+    printf("%.2f\t\t%.2f\t\t%.2f", importeCompra, descuento, neto);
+    return 0;
+}
