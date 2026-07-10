@@ -1,0 +1,45 @@
+/* Se ingresan 100 letras. Determinar la cantidad de vocales ingresadas. */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+
+    char abc[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};// array con el abecedario
+    char letras[100] // array donde se van a almacenar las 100 letras
+    int cuenta_vocales = 0, i, x, m;
+    int largo_letras = sizeof(letras)/sizeof(letras[0]); // se determina el largo de las letras
+    srand(time(NULL)); // genero semilla para funcion rand()
+
+    // Generador de 100 caracteres aleatorios
+    for (i = 0; i < largo_letras; i++){
+            x = rand()%(sizeof(abc)/sizeof(abc[0])); // genera numero aleatorio
+            letras[i] = abc[x]; // guarda en el array letras una letra creada aleatoriamente
+            printf("%c\n", letras[i]);
+    }
+
+    //Chequea si hay vocales en el array letras y las cuenta.
+    for (m = 0; m < largo_letras; m++){
+        switch(letras[m]){
+            case 'a':
+                cuenta_vocales++;
+                break;
+            case 'e':
+                cuenta_vocales++;
+                break;
+            case 'i':
+                cuenta_vocales++;
+                break;
+            case 'o':
+                cuenta_vocales++;
+                break;
+            case 'u':
+                cuenta_vocales++;
+                break;
+        }
+    }
+    printf("\nLa cantidad de vocales es de %d\n", cuenta_vocales);
+    return 0;
+}
