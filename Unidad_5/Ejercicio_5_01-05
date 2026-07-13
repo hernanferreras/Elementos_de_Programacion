@@ -12,7 +12,7 @@ int main()
     cont = num; // se usa variable cont para no destruir el dato de num.
     while (cont != 0){
         suma = suma + cont;
-        cont--;;
+        cont--;
     }
     printf("El total de la suma de los numeros desde el %d es: %d", num, suma);
     return 0;
