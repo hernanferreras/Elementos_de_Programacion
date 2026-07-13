@@ -1,0 +1,34 @@
+/*
+    Ingresar N y N Números naturales. Determinar e informar:
+a.  La sumatoria de los valores múltiplos de 3.
+b.  La cantidad de valores múltiplos de 5.
+c.  La sumatoria de los valores que se ingresan en orden par.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int cantNum, num, cont = 1, sumaPar = 0, multi3 = 0, multi5 = 0;
+    printf("Ingrese la cantidad de numeros:");
+    scanf("%d", &cantNum);
+    while(cont <= cantNum){
+        printf("Ingrese el numero:");
+        scanf("%d", &num);
+        if (cont%2 == 0){
+            sumaPar = sumaPar + num;
+        }
+        if (num%3 == 0){
+            multi3 = multi3 + num;
+        }
+        if (num%5 == 0){
+            multi5++;
+        }
+        cont++;
+    }
+    printf("La sumatoria de los numeros ingresados en posicion par es: %d\n", sumaPar);
+    printf("La sumatoria de multiplos de 3 ingresados es de: %d\n", multi3);
+    printf("La cantidad de multiplos de 5 ingresados es de: %d\n", multi5);
+    return 0;
+}
