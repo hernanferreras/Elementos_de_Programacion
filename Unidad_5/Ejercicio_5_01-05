@@ -1,2 +1,19 @@
 /*Confeccionar un programa para calcular la suma de los primeros N números naturales. 
 El valor de N lo solicita por teclado el programa.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num, cont, suma = 0;
+    printf("Ingrese un numero: ");
+    scanf("%d", &num);
+    cont = num; // se usa variable cont para no destruir el dato de num.
+    while (cont != 0){
+        suma = suma + cont;
+        cont = cont - 1;
+    }
+    printf("El total de la suma de los numeros desde el %d es: %d", num, suma);
+    return 0;
+}
