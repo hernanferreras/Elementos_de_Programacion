@@ -5,12 +5,34 @@ a.  Edad promedio.
 b.  Estatura promedio.
 c.  Cantidad de alumnos mayores de 10 años.
 d.  Cantidad de alumnos que miden menos de 1.40 cm.
+
 */
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main()
 {
-    printf("Hello world!\n");
+    int edad, i, cantidadAlumnos10 = 0, cantidadAlumnosMenos140 = 0;
+    float edadPromedio, estatura, estaturaPromedio;
+    srand(time(NULL)); // se usa una funcion que genera numeros aleatorios para no cargar manualmente.
+    for (i = 0; i<45; i++){
+        edad = 1 + rand()%15;
+        #printf(" %d\n", edad); // se deja comentada linea que imprime la edad de cada alumno, se uso para validar.
+        estatura = 1.2 + rand()%1; // se ingresa la estatura de cada alumno tomando como valor inicial 1.2 mts y se le suma desde 0.1 a 0.9 mts.
+        edadPromedio = edadPromedio + edad;
+        estaturaPromedio = estaturaPromedio + estatura;
+        if (edad < 10){
+            cantidadAlumnos10++;
+        }
+        if (estatura<1.40){
+            cantidadAlumnosMenos140++;
+        }
+    }
+    printf("El promedio de edad es: %.2f\n", edadPromedio/i);
+    printf("El promedio de estatura es: %.2f\n", estaturaPromedio/i);
+    printf("La cantidad de alumnos menores a 10 años es: %d\n", cantidadAlumnos10);
+    printf("La cantidad de alumnos con estatura menor a 1,40 es: %d\n", cantidadAlumnosMenos140);
     return 0;
 }
