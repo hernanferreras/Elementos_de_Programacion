@@ -1,5 +1,6 @@
 /*
 Dadas 20 notas y legajos de alumnos de un curso. Determinar:
+
 a.  Cantidad de alumnos aplazados.
 b.  Cuando la nota sea mayor a 7, mostrar el mensaje: “El alumno con legajo xxx ha Promocionado”.
 */
@@ -9,6 +10,27 @@ b.  Cuando la nota sea mayor a 7, mostrar el mensaje: “El alumno con legajo xx
 
 int main()
 {
-    printf("Hello world!\n");
+    int legajo, count=1;
+    float nota=0;
+    int alumnosAplazados = 0;
+    while (count <=10){
+        printf("Ingrese el legajo del alumno: ");
+        scanf(" %d", &legajo);
+        printf("Ingrese la nota del legajo %d: ", legajo);
+        scanf(" %f", &nota);
+        if (nota>=0 && nota<=10){
+            count++;
+        } else {
+            printf("La nota ingresada debe estar entre 1 y 10\n");
+        }
+        if(nota<4 && nota >=0){
+            alumnosAplazados++;
+        } else {
+            if((nota>=7)&&(nota<=10)){
+                printf("El alumno con legajo %d ha Promocionado\n", legajo);
+            }
+        }
+    }
+    printf("La cantidad de alumnos aplazados es de %d", alumnosAplazados);
     return 0;
 }
