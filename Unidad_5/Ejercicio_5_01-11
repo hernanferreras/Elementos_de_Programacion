@@ -2,3 +2,37 @@
 Ingresar 18 valores de temperatura distintos de cero. 
 Se pide determinar e informar cuantas ternas (tres valores seguidos) de valores positivos y cuantas de negativos hay.
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i, countPositivos = 0, countNegativos = 0, ternaPositivo = 0, ternaNegativo = 0;
+    float num = 1;
+    for (i = 0; i<18; i++){
+        printf("Ingrese el valor de la temperatura: ");
+        scanf(" %f", &num);
+        if (num == 0){
+            printf("Los valores de temperatura deben ser distintos de 0\n");
+            i--; // se le resta 1 al ciclo for para tener 18 valores de temperatura distintos de 0
+        } else {
+            if(num > 0){
+                countPositivos++;
+            } else {
+                countNegativos++;
+            }
+        }
+        if (countPositivos == 3){
+            ternaPositivo++;
+            countPositivos = 0;
+        }
+        if (countNegativos == 3){
+            ternaNegativo++;
+            countNegativos = 0;
+        }
+    }
+    printf("La cantidad de ternas Positivas es de: %d\n", ternaPositivo);
+    printf("La cantidad de ternas Negativas es de: %d\n", ternaNegativo);
+    return 0;
+}
