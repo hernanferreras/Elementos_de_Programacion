@@ -7,3 +7,51 @@ c.  la cantidad de ceros.
 
 Si el valor ingresado N es mayor que 12 informar 'VALOR EXCEDIDO” y si es menor o igual a 0 informar “CANTIDAD INVALIDA”.
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    srand(time(NULL));
+    int i, num1 = 0, num2, cantCero = 0;
+    int sumaPositivo = 0, sumaNegativo = 0, countPositivo = 0, countNegativo = 0;
+    while (num1 < 1 || num1 > 12){ // ciclo while que verifica que la cantidad de numeros a ingresar sean entre 1 y 12.
+        printf("Ingrese un numero entre 1 y 12: ");
+        scanf(" %d", &num1);
+        if(num1 <= 0){
+            printf("CANTIDAD INVALIDA\n");
+        }
+        if(num1 > 12){
+            printf("VALOR EXCEDIDO\n");
+        }
+    }
+    for (i = 0; i < num1; i++){ //ciclo for para ingresar la cantidad de numeros solicitados
+        printf("Ingrese un nro: ");
+        scanf(" %d", &num2);
+        if (num2 == 0){
+            cantCero++;
+        } else {
+            if (num2 > 0){
+                sumaPositivo = sumaPositivo + num2;
+                countPositivo++;
+            } else {
+                sumaNegativo = sumaNegativo + num2;
+                countNegativo++;
+            }
+        }
+    }
+    if(countPositivo > 0){
+            printf("El promedio de los numeros positivos es %.2f\n", (float)(sumaPositivo/countPositivo));
+    } else {
+            printf("No hay numeros positivos en el listado\n");
+    }
+    if(countNegativo > 0){
+            printf("El promedio de los numeros negativos es %.2f\n", (float)(sumaNegativo/countNegativo));
+    } else {
+            printf("No hay numeros negativos en el listado\n");
+    }
+    printf("La cantidad de numeros 0 es de: %d", cantCero);
+    return 0;
+}
