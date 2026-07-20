@@ -18,16 +18,18 @@ int main()
             i--; // se le resta 1 al ciclo for para tener 18 valores de temperatura distintos de 0
         } else {
             if(num > 0){
-                countPositivos++;
+                countPositivos++; //Si num es positivo suma 1 y resetea el contador de negativos.
+                countNegativos = 0;
             } else {
-                countNegativos++;
+                countNegativos++; //Si num es negativo suma 1 y resetea el contador de positivos.
+                countPositivos = 0;
             }
         }
-        if (countPositivos == 3){
+        if (countPositivos == 3){ //si se detecta 3 positivos seguidos se suma 1 a la terna de positivos y resetea el contador de positivos.
             ternaPositivo++;
             countPositivos = 0;
         }
-        if (countNegativos == 3){
+        if (countNegativos == 3){ //si se detecta 3 negativos seguidos se suma 1 a la terna de negativos y resetea el contador de negativos.
             ternaNegativo++;
             countNegativos = 0;
         }
